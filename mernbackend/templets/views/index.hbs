@@ -4,10 +4,105 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Registration Form</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-color: rgb(53, 52, 52);
+    }
+    .reg{
+    }
+    .reg h1{
+      color: white;
+      font-size: 36px;
+      text-align: center;
+    }
+    .form-box{
+      display: flex;
+      justify-content: center;
+    }
+    .form{
+      width: 60vw;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .left{
+      margin: 0 40px;
+    }
+    .right{
+      margin: 0 20px;
+    }
+    .input{
+      padding: 8px 5px;
+      width: 70%;
+      font-size: 16px;
+    }
+    .radio{
+      margin: 9px 0;
+    }
+    .button-box{
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-left: 150px;
+      margin-top: 30px;
+    }
+    .button{
+      padding: 12px 20px;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      cursor: pointer;
+      outline: none;
+      border-radius: 10px;
+      border-width: 0;
+      width: fit-content;
+      background-color: rgb(43, 41, 41);
+      color: white;
+    }
+    .button:hover{
+      color: black;
+      background-color: rgb(107, 107, 228);
+    }
+    .button2{
+      margin-left: 100px;
+    }
+  </style>
 </head>
 <body>
-  {{>navbar}}
-  <h1>This is my first MERN Stack project</h1>
+  <section class="reg">
+    <h1>Registration Form</h1>
+    <div class="form-box">
+      <form action="/register" method="POST" class="form">
+        <div class="left">
+          <input type="text" name="firstName" value="" placeholder="First Name *" class="input"> <br><br>
+          <input type="text" name="email" value="" placeholder="Your Email *" class="input"> <br><br>
+          <input type="text" name="phone" value="" placeholder="Phone Number *" class="input"> <br><br>
+          <input type="password" name="password" value="" placeholder="Password *" class="input"> 
+        </div>
+        <div class="right">
+          <input type="text" name="lastName" value="" placeholder="Last Name *" class="input"> <br><br>
+          <div class="radio">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="female">
+          </div><br>
+          <input type="text" name="age" value="" placeholder="Enter Your Age *" class="input"> <br><br>
+          <input type="password" name="confirmPassword" value="" placeholder="Confirm Password*" class="input"> 
+        </div>
+        <div class="button-box">
+          <button class="button" type="submit" value="Registered">Register</button>
+        </div>
+        
+      </form>
+    </div>
+    
+  </section>
+  
 </body>
 </html>
