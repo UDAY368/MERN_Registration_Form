@@ -6,11 +6,12 @@ require('./db/connect')
 
 const staticPath = path.join(__dirname, '../public');
 app.use(express.static(staticPath));
+app.set('view engine', 'hbs');
 
 const port = process.env.PORT || 4000;
 
 app.get("/",(req,res) =>{
-  res.send("I Love web development");
+  res.render("index");
 })
 
 app.listen(port, () => {
